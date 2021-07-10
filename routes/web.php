@@ -130,15 +130,58 @@ Route::post('/messages', [SmsController::class, 'create']);
  */
 Route::middleware(['auth:sanctum', 'verified']) 
         ->get('/users/index', [UserController::class, 'index'])->name('users.index');
-// Route::group(['middleware' => ['auth']], function() {
+//profile 
+Route::middleware(['auth:sanctum', 'verified']) 
+        ->get('/users/profile', [UserController::class, 'show'])->name('users.show');
+
+ //Route::group(['middleware' => ['auth']], function() {
         //candidacy 
+       
         Route::get('candidacy/create', [CandidacyController::class, 'create'])->name('candidacy.create');
         Route::post('candidacies', [CandidacyController::class, 'store'])->name('candidacy.store');
         Route::get('candidacies/index', [CandidacyController::class, 'index'])->name('candidacy.index');
 
         // Vote  
         Route::get('vote/create', [VoteController::class, 'create'])->name('vote.create');
-        //Route::get('vote/create', [VoteController::class, 'create'])->name('vote.create');
-        // Route::post('votes', [VoteController::class, 'store'])->name('vote.store');
-         Route::get('votes/index', [VoteController::class, 'index'])->name('vote.index');
-// });
+         // Route::post('votes', [VoteController::class, 'store'])->name('vote.store');
+        Route::get('votes/index', [VoteController::class, 'index'])->name('vote.index');
+          Route::get('vote/show', [VoteController::class, 'show'])->name('vote.show');
+        //  
+        Route::middleware(['auth:sanctum', 'verified'])
+            ->get('/election/committee', function () {
+                    return Inertia::render('Election/ElectionCommittee');
+                })
+                ->name('election.committee');
+        //
+       
+        //election 
+        Route::middleware(['auth:sanctum', 'verified'])
+            ->get('/election/result', function () {
+                    return Inertia::render('Election/ElectionResult');
+                })
+                ->name('election.result');
+        //
+          Route::middleware(['auth:sanctum', 'verified'])
+            ->get('/election/index', function () {
+                    return Inertia::render('Election/ElectionIndex');
+                })
+                ->name('election.committee');
+        //
+            Route::middleware(['auth:sanctum', 'verified'])
+            ->get('/election/committee', function () {
+                    return Inertia::render('Election/ElectionCommittee');
+                })
+                ->name('election.committee');
+        //
+       
+        //finance  
+          Route::middleware(['auth:sanctum', 'verified'])
+            ->get('/finance/index', function () {
+                    return Inertia::render('Finance/FinanceIndex');
+                })
+                ->name('finance.index');   
+
+//      });
+
+//finance 
+   

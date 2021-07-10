@@ -18,6 +18,12 @@ class VoteController extends Controller
      */
     public function index()
     {
+         return Inertia::render('Vote/IndexVote', [
+            //    "presidents" => $presidents,
+            //   "vicepresidents" => $vicepresidents,
+                'name'=>auth()->user()->name 
+              
+         ]);
        
     }
 
@@ -80,6 +86,13 @@ class VoteController extends Controller
     public function show(Vote $vote)
     {
         //
+        return Inertia::render('Vote/VoteShow', [
+            //    "presidents" => $presidents,
+            //    "vicepresidents" => $vicepresidents,
+            
+                'name'=>auth()->user()->name 
+              
+         ]);
     }
 
     /**

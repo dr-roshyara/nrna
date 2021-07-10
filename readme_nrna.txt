@@ -55,7 +55,7 @@
         use App\Models\Post;
         $post =new Post
         $post->post_id ="2021_03"
-        $post->name ="Vice President" उपाध्यक्ष 
+        $post->name ="Vice President" 
         $post->nepali_name ="उपाध्यक्ष" 
         $post->save()
         #

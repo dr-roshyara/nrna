@@ -1,5 +1,6 @@
 <template>
     <div class="text-center mx-auto text-center mt-4 px-4">
+        Candidate List  table name , nrna_id, post, region, 
             <div class="mx-auto text-center" > 
             <table> 
                   <tr v-for =" (candidate, candiIndx) in candidacies.data" :key="candiIndx" > {{candidate.candidacy_name}}</tr>        

@@ -93,6 +93,12 @@ class UserController extends Controller
     public function show($id)
     {
         //
+        $user = DB::table('users')->where('id', $id);
+        return Inertia::render('User/Profile', [
+          'user' => $user,
+ 
+        ]);
+    
     }
 
     /**
