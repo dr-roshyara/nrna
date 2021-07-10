@@ -9,7 +9,8 @@ use \App\Models\User;
 use \App\Http\Controllers\UserController;
 use \App\Models\Message;
 use Spatie\Permission\Models\Role;
-
+use App\Http\Controllers\CandidacyController;
+use App\Http\Controllers\VoteController; 
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -75,7 +76,7 @@ Route::get('/contact', function (){
     return inertia('Contact');
 });
 Route::get('/message', function (){
-    return inertia('Message', [
+    return inertia('Message', [ 
         'messages'=>Message::all()
     ]);
 });
@@ -83,33 +84,34 @@ Route::get('/message', function (){
 Route::middleware(['auth:sanctum', 'verified'])
 ->get('/messages/index', [MessageController::class, 'index'])->name('messages.index');
 // Route::post('messages',[MessageController::class, 'store'])->name('messages.store');
+Route::post('/messages', [SmsController::class, 'create']);
 
-Route::post('/messages', function(Request $request){
-    Message::create(
-            Request::validate([
-                'from' => ['required', 'max:50'], 
-                'to' => ['required', 'max:50'],
-                'message' => ['required', 'max:255'],
-            ])
-        );
-        // Route::get('/sms', [SmsController::class, 'index']); 
-        //
-    // public $nexmo      = app('Nexmo\Client');
-        $sender     =$request['from']; 
-        $receiver   =$request['to'];
-     //    
-        Nexmo::message()->send([
-        'to'   => $this->receiver,
-        'from' => $this->sender,
-        'text' => 'Using the facade to send a message.'
-        ]);
-        echo "message sent!"; 
-      
-        // return Redirect::route('/message'); 
-        return redirect('/messages/index')->with('from', 'to', 'message');
-        // return Redirect::route('Message.Index');
+// Route::post('/messages', function(Request $request){
+//     Message::create(
+//             Request::validate([
+//                 'from' => ['required', 'max:50'], 
+//                 'to' => ['required', 'max:50'],
+//                 'message' => ['required', 'max:255'],
+//             ])
+//         );
+//     // //
+//     // // public $nexmo      = app('Nexmo\Client');
+//     //     $sender     =$request['from']; 
+//     //     $receiver   =$request['to'];
+//     //  //    
+//     //     Nexmo::message()->send([
+//     //     'to'   => $this->receiver,
+//     //     'from' => $this->sender,
+//     //     'text' => 'Using the facade to send a message.'
+//     //     ]);
+//     //     // echo "message sent!"; 
+//         //    Route::get('/sms', [SmsController::class, 'index']); 
+        
+//         // return Redirect::route('/message'); 
+//      return redirect('/messages/index')->with('from', 'to', 'message');
+//         // return Redirect::route('Message.Index');
 
-});
+// });
 //
 // Route::group(['middleware' => ['auth']], function() {
 //     Route::resource('roles', RoleController::class);
@@ -126,5 +128,17 @@ Route::post('/messages', function(Request $request){
  * User Display
  * 
  */
-Route::middleware(['auth:sanctum', 'verified'])
+Route::middleware(['auth:sanctum', 'verified']) 
         ->get('/users/index', [UserController::class, 'index'])->name('users.index');
+// Route::group(['middleware' => ['auth']], function() {
+        //candidacy 
+        Route::get('candidacy/create', [CandidacyController::class, 'create'])->name('candidacy.create');
+        Route::post('candidacies', [CandidacyController::class, 'store'])->name('candidacy.store');
+        Route::get('candidacies/index', [CandidacyController::class, 'index'])->name('candidacy.index');
+
+        // Vote  
+        Route::get('vote/create', [VoteController::class, 'create'])->name('vote.create');
+        //Route::get('vote/create', [VoteController::class, 'create'])->name('vote.create');
+        // Route::post('votes', [VoteController::class, 'store'])->name('vote.store');
+         Route::get('votes/index', [VoteController::class, 'index'])->name('vote.index');
+// });

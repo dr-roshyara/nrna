@@ -13,18 +13,18 @@
                     <!-- <welcome /> -->
                     <!-- <p> Here we are </p>  -->
                     <div> 
-                        <ul class="p-4 text-bold text-lg">
-                            <li>1. Go to Voting Form </li> 
-                            <li>2. Go to Voter List </li>
-                            <li>3. Go to Candidacy Form </li>
-                            <li>4. Go to Candidacy List </li>
-                            <li>5. Go to SMS List </li>
-                            <li>6. Go to Election committee </li>
-                            <li>7. Go to  Election Result </li>
-                            <li>8. Go to  Your Vote </li> 
-                            <li>9. Go to  General Information </li>
+                        <ol class="p-4 text-bold text-lg">
+                            <li >1. Go to Voting Form </li> 
+                            <li class ="py-2 mb-2 text-gray-900 bg-blue-500">2. <a href="users/index">Go to Voter List</a> </li>
+                            <li class ="py-2 mb-2 text-gray-900 bg-blue-500">3. <a href="candidacy/create"> Go to Candidacy Form</a> </li>
+                            <li >4. <a href="candidacies/index">Go to Candidacy List</a>  </li>
+                            <li class ="py-2 mb-2 text-gray-900 bg-blue-500">5. <a href="messages/index">Go to SMS List</a> </li>
+                            <li >6. Go to Election committee </li>
+                            <li >7. Go to  Election Result </li>
+                            <li >8. Go to  Your Vote </li> 
+                            <li >9. Go to  General Information </li>
 
-                        </ul> 
+                        </ol> 
                      </div>
                 </div>
             </div>

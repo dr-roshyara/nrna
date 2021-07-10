@@ -14,6 +14,8 @@ use Laravel\Sanctum\HasApiTokens;
 use  Spatie\Permission\Traits\HasRoles;
 use App\Models\Vote;
 use \App\Models\Candidacy;
+use App\Models\File;
+use App\Models\Upload;
 class User extends Authenticatable
 {
     use HasApiTokens;
@@ -87,5 +89,19 @@ class User extends Authenticatable
        /**
         * Display all users . 
          */ 
+    /**
+     * User has many files 
+     */
+    public function files()
+    {
+      return $this->hasMany(File::class);
+    }
+    /**
+     * A user has many uploads 
+     */
+    public function uploads()
+    {
+        return $this->hasMany(Upload::class);
+    }
        
 }

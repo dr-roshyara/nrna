@@ -17,26 +17,29 @@ class CreateCandidaciesTable extends Migration
             $table->id();
             $table->bigInteger('user_id')->unsigned();
             $table->integer('candidacy_id')->unsigned();
+            $table->string('candidacy_name');
             $table->bigInteger('proposer_id')->unsigned();
             $table->string('proposer_name');
             $table->bigInteger('supporter_id')->unsigned();            
             $table->string('supporter_name'); 
-            $table->string('post_id');
-            $table->string('picture')->nullable();
-            
+            $table->string('post_name');
+            $table->string('post_id')->nullable;
+            $table->string('image_path_1')->nullable;
+            $table->string('image_path_2')->nullable; 
+            $table->string('image_path_3')->nullable;                         
             //
-            $table->foreign('user_id')
+            $table->foreign('user_id') 
                 ->references('id')->on('users') 
                 ->onDelete('cascade');
             //
-             $table->foreign('proposer_id')
-                  ->references('id')->on('users')
-                  ->onDelete('cascade');
-            //
-             $table->foreign('supporter_id')
-                  ->references('id')->on('users')
-                  ->onDelete('cascade');
-            //                  
+            //  $table->foreign('proposer_id')
+            //       ->references('id')->on('users')
+            //       ->onDelete('cascade');
+            // //
+            //  $table->foreign('supporter_id')
+            //       ->references('id')->on('users')
+            //       ->onDelete('cascade');
+            // //                  
             $table->foreign('post_id')
                   ->references('post_id')
                   ->on('posts')

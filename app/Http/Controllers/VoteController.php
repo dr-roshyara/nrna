@@ -4,7 +4,11 @@ namespace App\Http\Controllers;
 
 use App\Models\Vote;
 use Illuminate\Http\Request;
-
+use Inertia\Inertia;
+use App\Models\User;
+use App\Models\Candidacy;
+use App\Models\Upload;
+use Illuminate\Support\Facades\DB;
 class VoteController extends Controller
 {
     /**
@@ -14,7 +18,7 @@ class VoteController extends Controller
      */
     public function index()
     {
-        //
+       
     }
 
     /**
@@ -24,8 +28,37 @@ class VoteController extends Controller
      */
     public function create()
     {
-        //
-    }
+         
+        //  $candidacies = DB::table('candidacies')->get();
+
+            //  $candidacies = Candidacy::query();
+                // $presidents=DB::table('candidacies')->pluck('post_name');
+                // ->pluck('title');
+            // $presidents =$candidacies->where('post_name',"president");
+        //    for ($i=0; $i<sizeof($presidents); $i++){
+        //         dd($presidents[$i]);
+        //         dd(gettype($candidacies[$i]));   
+        //         //   $candidacies[$i]["checbox"] =>"dispabled";
+        //    } 
+        //  dd($candidacies);
+         $query =Candidacy::query();
+        $candidacies =$query->paginate(120);
+         
+            
+        //  Inertia::render("Vote/IndexVote", [
+        //     "candidacies" => $candidacies 
+        // ]); 
+
+       return Inertia::render('Vote/CreateVote', [
+        //    "presidents" => $presidents,
+        //    "vicepresidents" => $vicepresidents,
+            "candidacies" =>$candidacies,
+             'name'=>auth()->user()->name 
+              
+         ]);
+        //    {name: "Hari Bahadur", photo: "test1.png",  post: ["President", "अद्यक्ष"], id:"hari", checked: false, disabled: false },
+  
+    }    
 
     /**
      * Store a newly created resource in storage.

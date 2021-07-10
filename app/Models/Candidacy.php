@@ -1,9 +1,11 @@
 <?php
 
 namespace App\Models;
-
+use Illuminate\Http\Request;
+use Inertia\Inertia;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use App\Http\Controllers\Redirect;
 //
 use App\Models\User;
 use App\Models\Post;
@@ -11,6 +13,8 @@ use App\Models\Vote;
 class Candidacy extends Model
 {
     use HasFactory;
+    protected $fillable =[ 'name','user_id','user_name','candidacy_id','candidacy_name', 'proposer_name', 'proposer_id',
+    'supporter_id','supporter_name', 'post_id','post_nepali_name','post_name', 'image_path_1', 'image_path_2', 'image_path_3'];
      /**
      * Each Candidacy  belongs to only  one user 
      * Get the user 

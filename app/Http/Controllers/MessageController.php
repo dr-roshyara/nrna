@@ -69,8 +69,14 @@ class MessageController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-      public function store()
+      public function store(Request $request)
     {
+        $request()->validate([
+                'from' => ['required', 'max:50'], 
+                'to' => ['required', 'max:50'],
+                'message' => ['required', 'max:255'],
+           
+        ]);
         Message::create(
             Request::validate([
                 'from' => ['required', 'max:50'], 

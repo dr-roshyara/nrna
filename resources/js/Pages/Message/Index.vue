@@ -113,13 +113,13 @@ export default {
             this.params.field     =field;
             console.log(this.params.direction);
             if(this.params.direction ==='desc'){
-                this.params.direction = 'asc'   
+                this.params.direction = 'asc'    
             }else{
                 this.params.direction = 'desc' 
             }
             //this.params.direction = this.params.direction === 'asc'  ?  'desc' :  'asc';
         }
-    },
+    }, 
     components: {
      Message 
     }

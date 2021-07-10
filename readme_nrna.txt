@@ -42,18 +42,21 @@
         $post =new Post
         $post->post_id ="2021_01"
         $post->name ="ICC Member"
+        $post->nepali_name ="आइसीसी सदस्य"
         $post->save()
         # 
        use App\Models\Post;
         $post =new Post
         $post->post_id ="2021_02"
         $post->name ="President"
+        $post->nepali_name ="अद्यक्ष" 
         $post->save()
         #
         use App\Models\Post;
         $post =new Post
         $post->post_id ="2021_03"
-        $post->name ="Vice President"
+        $post->name ="Vice President" उपाध्यक्ष 
+        $post->nepali_name ="उपाध्यक्ष" 
         $post->save()
         #
         use App\Models\Post;
