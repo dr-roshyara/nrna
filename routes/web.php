@@ -164,7 +164,7 @@ Route::middleware(['auth:sanctum', 'verified'])
             ->get('/election/index', function () {
                     return Inertia::render('Election/ElectionIndex');
                 })
-                ->name('election.committee');
+                ->name('election.info');
         //
             Route::middleware(['auth:sanctum', 'verified'])
             ->get('/election/committee', function () {

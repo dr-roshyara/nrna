@@ -18,10 +18,10 @@ class VoteController extends Controller
      */
     public function index()
     {
-         return Inertia::render('Vote/IndexVote', [
+         return Inertia::render('Vote/VoteIndex', [
             //    "presidents" => $presidents,
             //   "vicepresidents" => $vicepresidents,
-                'name'=>auth()->user()->name 
+                // 'name'=>auth()->user()->name 
               
          ]);
        

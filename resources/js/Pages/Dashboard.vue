@@ -26,10 +26,11 @@
                                 <a href="election/committee" > Go to Election committee </a> </li>
                             <li >7. <a href="election/result"> Go to  Election Result</a> </li>
                             <li >8. <a href="vote/show"> Go to  Your Vote Whta you have given </a></li> 
-                            <li >9. <a href=""> Go to  General Information </a> </li> 
-                            <li >10. <a href="user/profile"> Go To Your personal profile  </a></li>
-                            <li >11. <a href="election/index"> Election menefesto profile </a></li>
-                            <li >11. <a href="finance/index"> Election Fianance Expenditure </a></li>
+                            <li >9. <a href="votes/index"> Go to List of All votes</a></li> 
+                            <li >10. <a href=""> Go to  General Information </a> </li> 
+                            <li >11. <a href="user/profile"> Go To Your personal profile  </a></li>
+                            <li >12. <a href="election/index"> Election menefesto profile </a></li>
+                            <li >13. <a href="finance/index"> Election Fianance Expenditure </a></li>
                             
 
 
