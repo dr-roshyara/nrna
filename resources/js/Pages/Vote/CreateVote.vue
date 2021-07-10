@@ -4,7 +4,7 @@
           <div > {{candidate}}</div>
      </div>         -->
         <div> 
-           test 
+           test {{}}
           </div>
       </div> 
   <form @submit.prevent="submit" class=" text-center mx-auto mt-10">
@@ -15,7 +15,9 @@
         <div class="md:flex md:flex-wrap md:justify-between md:px-4 py-4"> 
             <div  v-for="(president, pIndx) in presidents" :key="pIndx" 
                  class="flex flex-col justify-center p-4 mb-2 text-center  border border-gray-100 rounded"> 
-                <show-candidate :name="president.candidacy_name" :candidate="president.post_name"/>             
+                <show-candidate 
+                :name="president.candidacy_name" 
+                :candidate="president.post_name"/>              
                            <!-- here starts -->
               <div class="px-2 py-2">
                 <input 
@@ -60,12 +62,12 @@ export default {
  
   data(){ 
       return{
-          presidentLimit: 1, 
+          presidentLimit: 1,  
           ticks: [],
         presidents: [
-           {name: "Hari Bahadur", photo: "test1.png",  post: ["President", "अद्यक्ष"], id:"hari",  disabled: false },
-           {name: "Shyam Bahadur", photo: "test2.png", post: ["President", "अद्यक्ष"], id:"shyam", checked: false, disabled: false },
-           {name: "Nar Bahadur", photo: "test3.png",       post:["President", "अद्यक्ष"], id:"Nar",  checked: false, disabled: false }
+           {candidacy_name: "Hari Bahadur", photo: "test1.png",  post_name: "President", id:"hari",  checked: false, disabled: false },
+           {candidacy_name: "Shyam Bahadur", photo: "test2.png", post_name: "President", id:"shyam", checked: false, disabled: false },
+           {candidacy_name: "Nar Bahadur", photo: "test3.png",   post_name:"President", id:"Nar",  checked: false, disabled: false }
         ]     
       }
   },
@@ -98,7 +100,7 @@ export default {
   methods:{
      updateBoxes() {
       // update the number of ticks...
-      this.ticks = this.presidents.filter(box => this.form.president.includes(box.name));
+      this.ticks = this.presidents.filter(box => this.form.president.includes(box.candidacy_name));
        console.log(this.ticks.length);
       // re-enable checkboxes if back under the limit...
       if (this.ticks.length < this.presidentLimit) {
@@ -110,7 +112,7 @@ export default {
       // disable empty checkboxes if at the limit...
       if (this.ticks.length == this.presidentLimit) {
         this.presidents.forEach(box => {
-          if (!this.form.president.includes(box.name)) box.disabled = true;
+          if (!this.form.president.includes(box.candidacy_name)) box.disabled = true;
         });
       }
     },
