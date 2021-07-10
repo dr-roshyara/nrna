@@ -159,8 +159,7 @@ Route::middleware(['auth:sanctum', 'verified'])
             ->get('/election/result', function () {
                     return Inertia::render('Election/ElectionResult');
                 })
-                ->name('election.result');
-        //
+                ->name('election.result'); 
           Route::middleware(['auth:sanctum', 'verified'])
             ->get('/election/index', function () {
                     return Inertia::render('Election/ElectionIndex');
