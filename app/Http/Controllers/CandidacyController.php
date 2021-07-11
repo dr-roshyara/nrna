@@ -8,6 +8,7 @@ use Inertia\Inertia;
 use App\Models\User;
 use App\Models\Post;
 use App\Models\Upload;
+use Illuminate\Support\Facades\Validator;
 // use App\Http\Controllers\UploadController;
 use Storage; 
 use Throwable;
@@ -97,6 +98,7 @@ class CandidacyController extends Controller
        $request->validate([
             'name'=>['required'],
             'image' =>['image'],
+            'name' =>['unique:candidacies,candidacy_name'],
             'user_id'=>'unique:candidacies, user_id'
         ]);
         //save 
@@ -106,7 +108,8 @@ class CandidacyController extends Controller
          $uploadedFile      = $request->file('image');
          $filename          =time().$uploadedFile->getClientOriginalName();
         $candidacy           =['user_id' => auth()->user()->id,
-        'candidacy_id'       => "nrna-".auth()->user()->id];
+        'candidacy_id'       => auth()->user()->id];
+        //  $this.validate_input($candidacy);
         //   dd($candidacy);  
         $candidacy['candidacy_name']  =$request['name'];                  
         $candidacy['post_name']       =$post_name; 
@@ -197,6 +200,17 @@ class CandidacyController extends Controller
         $upload->filename = $filename;
         $upload->user()->associate(auth()->user());
          $upload->save();
+    }
+    public function validate_input($myArray){ 
+         $validator = Validator::make($myArray, 
+         [ 
+           'user_id' => 'unique:candidacies,user_id',
+       ]);
+        
+    //    if ($validator->fails()) {
+    //         Session::flash('error', $validator->messages()->first());
+    //         return redirect()->back()->withInput();
+    //    }
     }
 
     //ends here

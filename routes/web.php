@@ -144,7 +144,7 @@ Route::post('/messages', [SmsController::class, 'create']);
         
             // Vote  
             Route::get('vote/create', [VoteController::class, 'create'])->name('vote.create');
-            // Route::post('votes', [VoteController::class, 'store'])->name('vote.store');
+            Route::post('votes', [VoteController::class, 'store'])->name('vote.store');
             Route::get('votes/index', [VoteController::class, 'index'])->name('vote.index');
             Route::get('vote/show', [VoteController::class, 'show'])->name('vote.show');
      });

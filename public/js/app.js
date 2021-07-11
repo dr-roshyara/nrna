@@ -20425,40 +20425,21 @@ __webpack_require__.r(__webpack_exports__);
   },
   data: function data() {
     return {
-      presidentTicks: {
+      icc_memberTicks: {
         limit: 1,
         ticks: []
       },
-      ticks: [],
-      presidents: [{
-        candidacy_name: "Hari Bahadur",
-        photo: "test1.png",
-        candidacy_id: "nrna-01",
-        post_name: "President",
-        id: "hari",
-        checked: false,
-        disabled: false
-      }, {
-        candidacy_name: "Shyam Bahadur",
-        photo: "test2.png",
-        candidacy_id: "nrna-02",
-        post_name: "President",
-        id: "shyam",
-        checked: false,
-        disabled: false
-      }, {
-        candidacy_name: "Nar Bahadur",
-        photo: "test3.png",
-        candidacy_id: "nrna-03",
-        post_name: "President",
-        id: "Nar",
-        checked: false,
-        disabled: false
-      }]
+      ticks: [] // presidents: [
+      //    {candidacy_name: "Hari Bahadur", photo: "test1.png", candidacy_id:"nrna-01",  post_name: "President", id:"hari",  checked: false, disabled: false },
+      //    {candidacy_name: "Shyam Bahadur", photo: "test2.png", candidacy_id:"nrna-02", post_name: "President", id:"shyam", checked: false, disabled: false },
+      //    {candidacy_name: "Nar Bahadur", photo: "test3.png", candidacy_id:"nrna-03",   post_name:"President", id:"Nar",  checked: false, disabled: false }
+      // ]     
+
     };
   },
   setup: function setup(props) {
     var form = (0,_inertiajs_inertia_vue3__WEBPACK_IMPORTED_MODULE_0__.useForm)({
+      icc_member: [],
       president: [],
       vice_resident: '',
       proposer_name: '',
@@ -20479,9 +20460,9 @@ __webpack_require__.r(__webpack_exports__);
   },
   computed: {
     getLength: function getLength() {
-      return this.form.president.length;
+      return this.form.icc_member.length;
     },
-    presidentss: function presidentss() {
+    icc_members: function icc_members() {
       // return pres1;
       return this.create_candidates('2021_01');
     },
@@ -20502,7 +20483,7 @@ __webpack_require__.r(__webpack_exports__);
        * 
        */
       // update the number of ticks...
-      // this.ticks = this.presidentss.filter(box => this.form.president.includes(box.candidacy_id));
+      // this.ticks = this.icc_members.filter(box => this.form.president.includes(box.candidacy_id));
       tickObj.ticks = candiVec.filter(function (box) {
         return selectedVec.includes(box.candidacy_id);
       }); // console.log("tick length: "+tickObj.ticks.length);
@@ -27976,35 +27957,35 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
           return $setup.submit && $setup.submit.apply($setup, arguments);
         }, ["prevent"])),
         "class": " text-center mx-auto mt-10"
-      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <select name=\"cars\" id=\"cars\" form=\"carform\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.presidentss, function (president, pIndx) {
+      }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_1, [_hoisted_2, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" <select name=\"cars\" id=\"cars\" form=\"carform\"> "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_3, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_4, [((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(true), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)(vue__WEBPACK_IMPORTED_MODULE_0__.Fragment, null, (0,vue__WEBPACK_IMPORTED_MODULE_0__.renderList)($options.icc_members, function (icc_member, pIndx) {
         return (0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", {
           key: pIndx,
           "class": "flex flex-col justify-center p-4 mb-2 text-center  \r\n                 border border-gray-100 rounded"
         }, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_show_candidate, {
-          post_name: president.post_name,
-          post_nepali_name: president.post_nepali_name,
-          candidacy_name: president.candidacy_name
+          post_name: icc_member.post_name,
+          post_nepali_name: icc_member.post_nepali_name,
+          candidacy_name: icc_member.candidacy_name
         }, null, 8
         /* PROPS */
         , ["post_name", "post_nepali_name", "candidacy_name"]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" here starts "), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_5, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.withDirectives)((0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("input", {
           type: "checkbox",
-          id: president.user_id,
-          name: president.post_name,
-          value: president.candidacy_id,
+          id: icc_member.user_id,
+          name: icc_member.post_name,
+          value: icc_member.candidacy_id,
           "onUpdate:modelValue": function onUpdateModelValue($event) {
-            return $setup.form.president = $event;
+            return $setup.form.icc_member = $event;
           },
           "class": "p-6 rounded border-gray-900 border-2 text-indigo-600 shadow-sm focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50",
           onChange: function onChange($event) {
-            return $options.updateBoxes(_this.presidentss, _this.form.president, _this.presidentTicks);
+            return $options.updateBoxes(_this.icc_members, _this.form.icc_member, _this.icc_memberTicks);
           },
-          disabled: president.disabled
+          disabled: icc_member.disabled
         }, null, 40
         /* PROPS, HYDRATE_EVENTS */
-        , ["id", "name", "value", "onUpdate:modelValue", "onChange", "disabled"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.form.president]])])]);
+        , ["id", "name", "value", "onUpdate:modelValue", "onChange", "disabled"]), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelCheckbox, $setup.form.icc_member]])])]);
       }), 128
       /* KEYED_FRAGMENT */
-      ))]), $setup.form.president.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.find_selected_name(_this.presidentss, _this.form.president)), 1
+      ))]), $setup.form.icc_member.length ? ((0,vue__WEBPACK_IMPORTED_MODULE_0__.openBlock)(), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createBlock)("div", _hoisted_6, [_hoisted_7, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("span", _hoisted_8, (0,vue__WEBPACK_IMPORTED_MODULE_0__.toDisplayString)($options.find_selected_name(_this.icc_members, _this.form.icc_member)), 1
       /* TEXT */
       ), _hoisted_9])) : (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)("v-if", true)]), (0,vue__WEBPACK_IMPORTED_MODULE_0__.createCommentVNode)(" next "), _hoisted_10, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", _hoisted_11, [(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)(_component_jet_validation_errors, {
         "class": "mb-4  mx-auto text-center "
