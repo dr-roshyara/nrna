@@ -1,4 +1,5 @@
 <template>
+<app-layout>
   <form @submit.prevent="submit" class=" text-center mx-auto mt-10">
     <div> 
       <label> Name </label> 
@@ -50,11 +51,13 @@
    <div class="mx-auto text-center">
      <jet-validation-errors class="mb-4  mx-auto text-center " />
      </div>
+  </app-layout>
 </template>
 
 <script>
 import { useForm } from '@inertiajs/inertia-vue3'
  import JetValidationErrors from '@/Jetstream/ValidationErrors'
+ import AppLayout from '@/Layouts/AppLayout'
 
 export default {
   props:{
@@ -79,7 +82,9 @@ export default {
     return { form, submit }
   },
   components:{
-    JetValidationErrors
+    JetValidationErrors,
+     AppLayout
+  
   }
 }
 </script>

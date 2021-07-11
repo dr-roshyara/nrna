@@ -96,7 +96,8 @@ class CandidacyController extends Controller
         //  dd($request->all());
        $request->validate([
             'name'=>['required'],
-            'image' =>['image']
+            'image' =>['image'],
+            'user_id'=>'unique:candidacies, user_id'
         ]);
         //save 
         $post               =Post::all()->where('post_id', $request['post_id']);
@@ -105,7 +106,7 @@ class CandidacyController extends Controller
          $uploadedFile      = $request->file('image');
          $filename          =time().$uploadedFile->getClientOriginalName();
         $candidacy           =['user_id' => auth()->user()->id,
-        'candidacy_id'       =>1];
+        'candidacy_id'       => "nrna-".auth()->user()->id];
         //   dd($candidacy);  
         $candidacy['candidacy_name']  =$request['name'];                  
         $candidacy['post_name']       =$post_name; 

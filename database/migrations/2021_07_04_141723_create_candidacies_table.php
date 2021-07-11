@@ -15,7 +15,7 @@ class CreateCandidaciesTable extends Migration
     {
         Schema::create('candidacies', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('user_id')->unsigned();
+            $table->bigInteger('user_id')->unsigned()->unique();
             $table->integer('candidacy_id')->unsigned();
             $table->string('candidacy_name');
             $table->bigInteger('proposer_id')->unsigned();

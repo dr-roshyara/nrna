@@ -17,6 +17,7 @@ class CreatePostsTable extends Migration
             $table->id();
             $table->string('post_id')->unique();
             $table->string('name');
+              $table->string('nepali_name');
             $table->timestamps();
         });
     }
