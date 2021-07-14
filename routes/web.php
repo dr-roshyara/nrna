@@ -11,6 +11,7 @@ use \App\Models\Message;
 use Spatie\Permission\Models\Role;
 use App\Http\Controllers\CandidacyController;
 use App\Http\Controllers\VoteController; 
+use App\Http\Controllers\CodeController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -143,7 +144,12 @@ Route::post('/messages', [SmsController::class, 'create']);
             Route::get('candidacies/index', [CandidacyController::class, 'index'])->name('candidacy.index');
         
             // Vote  
+            //code creation  
+            Route::get('code/create', [CodeController::class, 'create'])->name('code.create');
+            Route::post('codes', [CodeController::class, 'store'])->name('code.store');
+                   
             Route::get('vote/create', [VoteController::class, 'create'])->name('vote.create');
+            
             Route::post('votes', [VoteController::class, 'store'])->name('vote.store');
             Route::get('votes/index', [VoteController::class, 'index'])->name('vote.index');
             Route::get('vote/show', [VoteController::class, 'show'])->name('vote.show');

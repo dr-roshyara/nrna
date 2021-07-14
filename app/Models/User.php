@@ -41,7 +41,10 @@ class User extends Authenticatable
         'housenumber',
         'postalcode',
         'city',
-        'nrna_id'
+        'nrna_id',
+        'can_vote_now',
+        'has_voted',
+        'has_candidacy'
     ];
 
     /**

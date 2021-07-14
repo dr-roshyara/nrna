@@ -54,14 +54,17 @@ class VoteController extends Controller
         //  Inertia::render("Vote/IndexVote", [
         //     "candidacies" => $candidacies 
         // ]); 
-
-       return Inertia::render('Vote/CreateVote', [
-        //    "presidents" => $presidents,
-        //    "vicepresidents" => $vicepresidents,
-            "candidacies" =>$candidacies,
-             'name'=>auth()->user()->name 
-              
-         ]);
+     if(auth()->user()->can_vote_now){   
+        return Inertia::render('Vote/CreateVote', [
+            //    "presidents" => $presidents,
+            //    "vicepresidents" => $vicepresidents,
+                "candidacies" =>$candidacies,
+                'name'=>auth()->user()->name 
+                
+            ]);
+        }else{
+            abort(404);
+        } 
         //    {name: "Hari Bahadur", photo: "test1.png",  post: ["President", "अद्यक्ष"], id:"hari", checked: false, disabled: false },
   
     }    
@@ -75,10 +78,13 @@ class VoteController extends Controller
     public function store(Request $request)
     {
         //
-          dd($request->all());
+          
          $request->validate([
-             
+            'icc_member' =>['required'],
+             'president' =>['required']
+            
          ]);
+         dd($request->all());
     }
 
     /**

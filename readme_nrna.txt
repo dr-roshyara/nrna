@@ -223,8 +223,17 @@
             SetUserRole.php 
             In this function create role and once this  is called all users get their role.
         
-        
-        
+    # add some more fields in user table 
+        filed 1: has_voted 
+        field 2: has_candidacy 
+        default : 0 
+        field3: code1 
+        field4: code2 
+        field 5: has_used_code1
+        field 5: has_used_code2
+            
+    # create code form 
+    
         
         
           

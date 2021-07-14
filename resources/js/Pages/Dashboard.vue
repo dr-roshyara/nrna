@@ -14,7 +14,7 @@
                     <!-- <p> Here we are </p>  -->
                     <div>  
                         <ol class="p-4 text-bold text-lg">
-                            <li >1. <a href="vote/create"> Go to Voting Form </a> </li> 
+                            <li >1. <a href="code/create"> Vote Now</a> </li> 
                             <li class ="py-2 mb-2 text-gray-900 bg-blue-500">2. 
                                 <a href="users/index">Go to Voter List</a> </li>
                             <li class ="py-2 mb-2 text-gray-900 bg-blue-500">
