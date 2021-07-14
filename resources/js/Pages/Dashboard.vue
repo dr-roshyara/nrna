@@ -2,20 +2,307 @@
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Dashboard NRNA
+                Dashboard
             </h2>
         </template>
 
-        <div class="py-12">
+        <div class="">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-                <div class="bg-white overflow-hidden shadow-xl sm:rounded-lg">
+                <div
+                    class="bg-white overflow-hidden shadow-xl sm:rounded-lg p-8"
+                >
                     <!-- <welcome /> -->
                     <!-- <p> Here we are </p>  -->
-                    <div>
+                    <div class="w-full">
+                        <a href="vote/create">
+                            <div
+                                class="
+                                    w-full
+                                    p-8
+                                    my-4
+                                    mx-0
+                                    border-2
+                                    rounded-lg
+                                    hover:bg-blue-100
+                                    flex flex-wrap
+                                    justify-center
+                                "
+                            >
+                                <img
+                                    src="images/ballot.png"
+                                    alt="Voting Form"
+                                    class="w-20 h-auto my-4"
+                                />
+                                <div
+                                    class="
+                                        w-full
+                                        text-center
+                                        font-bold
+                                        text-base
+                                        md:text-2xl
+                                    "
+                                >
+                                    Voting Form
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="w-full flex flex-wrap">
+                        <div class="w-full md:w-1/2">
+                            <a href="candidacies/index">
+                                <div
+                                    class="
+                                        w-full
+                                        p-8
+                                        my-4
+                                        mr-0
+                                        md:mr-2
+                                        border-2
+                                        rounded-lg
+                                        hover:bg-blue-100
+                                        flex flex-wrap
+                                        justify-center
+                                    "
+                                >
+                                    <img
+                                        src="images/list.png"
+                                        alt="Candidacy List"
+                                        class="w-20 h-auto my-4"
+                                    />
+                                    <div
+                                        class="
+                                            w-full
+                                            text-center
+                                            font-bold
+                                            text-base
+                                            md:text-2xl
+                                        "
+                                    >
+                                        Candidacy List
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="w-full md:w-1/2 pl-0 md:pl-2">
+                            <a href="candidacy/create">
+                                <div
+                                    class="
+                                        w-full
+                                        p-8
+                                        my-4
+                                        ml-0
+                                        md:ml-2
+                                        border-2
+                                        rounded-lg
+                                        hover:bg-blue-100
+                                        flex flex-wrap
+                                        justify-center
+                                    "
+                                >
+                                    <img
+                                        src="images/form.png"
+                                        alt="Candidacy Form"
+                                        class="w-20 h-auto my-4"
+                                    />
+                                    <div
+                                        class="
+                                            w-full
+                                            text-center
+                                            font-bold
+                                            text-base
+                                            md:text-2xl
+                                        "
+                                    >
+                                        Candidacy Form
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-full flex flex-wrap">
+                        <div class="w-full md:w-1/2">
+                            <a href="election/committee">
+                                <div
+                                    class="
+                                        w-full
+                                        p-8
+                                        my-4
+                                        mr-0
+                                        md:mr-2
+                                        border-2
+                                        rounded-lg
+                                        hover:bg-blue-100
+                                        flex flex-wrap
+                                        justify-center
+                                    "
+                                >
+                                    <img
+                                        src="images/committee.jpg"
+                                        alt="Election Committee"
+                                        class="w-20 h-auto my-4"
+                                    />
+                                    <div
+                                        class="
+                                            w-full
+                                            text-center
+                                            font-bold
+                                            text-base
+                                            md:text-2xl
+                                        "
+                                    >
+                                        Election Committee
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="w-full md:w-1/2 pl-0 md:pl-2">
+                            <a href="election/result">
+                                <div
+                                    class="
+                                        w-full
+                                        p-8
+                                        my-4
+                                        ml-0
+                                        md:ml-2
+                                        border-2
+                                        rounded-lg
+                                        hover:bg-blue-100
+                                        flex flex-wrap
+                                        justify-center
+                                    "
+                                >
+                                    <img
+                                        src="images/result.png"
+                                        alt="Election Result"
+                                        class="w-20 h-auto my-4"
+                                    />
+                                    <div
+                                        class="
+                                            w-full
+                                            text-center
+                                            font-bold
+                                            text-base
+                                            md:text-2xl
+                                        "
+                                    >
+                                        Election Result
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-full flex flex-wrap">
+                        <div class="w-full md:w-1/2">
+                            <a href="users/index">
+                                <div
+                                    class="
+                                        w-full
+                                        p-8
+                                        my-4
+                                        mr-0
+                                        md:mr-2
+                                        border-2
+                                        rounded-lg
+                                        hover:bg-blue-100
+                                        flex flex-wrap
+                                        justify-center
+                                    "
+                                >
+                                    <img
+                                        src="images/list.png"
+                                        alt="Voter List"
+                                        class="w-20 h-auto my-4"
+                                    />
+                                    <div
+                                        class="
+                                            w-full
+                                            text-center
+                                            font-bold
+                                            text-base
+                                            md:text-2xl
+                                        "
+                                    >
+                                        Voter List
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="w-full md:w-1/2 pl-0 md:pl-2">
+                            <a href="vote/show">
+                                <div
+                                    class="
+                                        w-full
+                                        p-8
+                                        my-4
+                                        ml-0
+                                        md:ml-2
+                                        border-2
+                                        rounded-lg
+                                        hover:bg-blue-100
+                                        flex flex-wrap
+                                        justify-center
+                                    "
+                                >
+                                    <img
+                                        src="images/ballot.png"
+                                        alt="Your Vote"
+                                        class="w-20 h-auto my-4"
+                                    />
+                                    <div
+                                        class="
+                                            w-full
+                                            text-center
+                                            font-bold
+                                            text-base
+                                            md:text-2xl
+                                        "
+                                    >
+                                        Your Vote what you have given
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="w-full flex flex-wrap">
+                        <div class="w-full md:w-1/2">
+                            <a href="#">
+                                <div
+                                    class="
+                                        w-full
+                                        p-8
+                                        my-4
+                                        mr-0
+                                        md:mr-2
+                                        border-2
+                                        rounded-lg
+                                        hover:bg-blue-100
+                                        flex flex-wrap
+                                        justify-center
+                                    "
+                                >
+                                    <img
+                                        src="images/information.png"
+                                        alt="Information"
+                                        class="w-20 h-auto my-4"
+                                    />
+                                    <div
+                                        class="
+                                            w-full
+                                            text-center
+                                            font-bold
+                                            text-base
+                                            md:text-2xl
+                                        "
+                                    >
+                                        General Information
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+
+                    <div class="hidden">
                         <ol class="p-4 text-bold text-lg">
-                            <li>
-                                1. <a href="vote/create"> Go to Voting Form </a>
-                            </li>
                             <li class="py-2 mb-2 text-gray-900 bg-blue-500">
                                 2. <a href="users/index">Go to Voter List</a>
                             </li>
