@@ -30,7 +30,7 @@
                             >
                                 <img
                                     src="images/ballot.png"
-                                    alt="Voting Form"
+                                    alt="Vote Here"
                                     class="w-20 h-auto my-4"
                                 />
                                 <div
@@ -42,7 +42,7 @@
                                         md:text-2xl
                                     "
                                 >
-                                    Voting Form
+                                    Vote Here
                                 </div>
                             </div>
                         </a>

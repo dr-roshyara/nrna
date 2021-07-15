@@ -2,7 +2,7 @@
     <app-layout>
         <template #header>
             <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-                Voting Form
+                Vote Here
             </h2>
         </template>
         <form @submit.prevent="submit" class="text-center mx-auto mt-10">

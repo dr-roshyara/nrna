@@ -24401,11 +24401,11 @@ var _hoisted_2 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("
   "class": "\r\n                                    w-full\r\n                                    p-8\r\n                                    my-4\r\n                                    mx-0\r\n                                    border-2\r\n                                    rounded-lg\r\n                                    hover:bg-blue-100\r\n                                    flex flex-wrap\r\n                                    justify-center\r\n                                "
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("img", {
   src: "images/ballot.png",
-  alt: "Voting Form",
+  alt: "Vote Here",
   "class": "w-20 h-auto my-4"
 }), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "\r\n                                        w-full\r\n                                        text-center\r\n                                        font-bold\r\n                                        text-base\r\n                                        md:text-2xl\r\n                                    "
-}, " Voting Form ")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
+}, " Vote Here ")])])]), /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-full flex flex-wrap"
 }, [/*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("div", {
   "class": "w-full md:w-1/2"
@@ -28203,7 +28203,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var _hoisted_1 = /*#__PURE__*/(0,vue__WEBPACK_IMPORTED_MODULE_0__.createVNode)("h2", {
   "class": "font-semibold text-xl text-gray-800 leading-tight"
-}, " Voting Form ", -1
+}, " Vote Here ", -1
 /* HOISTED */
 );
 
