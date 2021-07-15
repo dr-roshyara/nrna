@@ -75,7 +75,7 @@ class CodeController extends Controller
             return redirect()->route('vote.create');
 
         }else{
-            abort(404);
+            abort(404);  
         }
             
     }
